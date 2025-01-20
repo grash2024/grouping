@@ -10,12 +10,14 @@ import { addGroup } from "../../redux/slices/tableSlice";
 import TableModel from "../../models/tableModel";
 
 const Home: React.FC = () => {
+	let id = 0;
 	useEffect(() => {}, []);
 	const [selectedDist, setSelectedDist] = useState("");
 	const [selectedPerson, setSelectedPerson] = useState("");
 	const tableData: TableModel[] = useSelector(
 		(state: Rootstate) => state.table
 	);
+
 	const dispatcher = useDispatch();
 
 	const selectedDistHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -26,8 +28,9 @@ const Home: React.FC = () => {
 	};
 	const addToGroup = () => {
 		if (selectedPerson && selectedDist) {
-			dispatcher(addGroup({ district: selectedDist, person: selectedPerson }));
-			localStorage.setItem("data", JSON.stringify(tableData));
+			dispatcher(
+				addGroup({ id: id, district: selectedDist, person: selectedPerson })
+			);
 		}
 	};
 	return (
@@ -46,9 +49,11 @@ const Home: React.FC = () => {
 				<CButton title="Save" onClickHandler={addToGroup} />
 			</section>
 			<section>
+				{tableData.length > 0 && <h1>District,Person</h1>}
 				{tableData.map(({ district, person }) => (
-					<div>
-						{district},{person}
+					<div style={{ display: "flex" }}>
+						<p>{district}</p>
+						<p>{person}</p>
 					</div>
 				))}
 			</section>

@@ -1,4 +1,5 @@
 interface TableModel {
+	id: number;
 	district: string;
 	person: string;
 }
