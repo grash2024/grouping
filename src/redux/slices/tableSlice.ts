@@ -12,7 +12,12 @@ const tableSlice = createSlice({
 			localStorage.setItem("data", JSON.stringify(state));
 		},
 		removeGroup: (state, action) => {
-			state = state.filter((ele) => ele.id !== action.payload);
+			state = state.filter((ele) => ele._id !== action.payload);
+			localStorage.setItem("data", JSON.stringify(state));
+			return state;
+		},
+		loadGroup: (state, action) => {
+			state = action.payload;
 			localStorage.setItem("data", JSON.stringify(state));
 			return state;
 		},
@@ -20,4 +25,4 @@ const tableSlice = createSlice({
 });
 
 export default tableSlice.reducer;
-export const { addGroup, removeGroup } = tableSlice.actions;
+export const { addGroup, removeGroup, loadGroup } = tableSlice.actions;

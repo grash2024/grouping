@@ -18,14 +18,14 @@ const Table: React.FC<TableProps> = ({ tableData }) => {
 				</div>
 			)}
 
-			{tableData.map(({ id, district, person }) => (
-				<div key={id} className={tableCss.tRow}>
+			{tableData.map(({ _id, district, person }) => (
+				<div key={_id} className={tableCss.tRow}>
 					<div className={tableCss.distContainer}>{district}</div>
 					<div className={tableCss.perContainer}>{person}</div>
 					<div className={tableCss.btnContainer}>
 						<button
 							className={tableCss.btn}
-							onClick={() => dispatcher(removeGroup(id))}
+							onClick={() => dispatcher(removeGroup(_id))}
 						>
 							delete
 						</button>

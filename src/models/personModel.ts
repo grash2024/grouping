@@ -1,5 +1,5 @@
 interface PersonModel {
-	id: number;
+	_id: number;
 	pName: string;
 }
 export default PersonModel;

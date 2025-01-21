@@ -15,8 +15,8 @@ const PersonDDown: React.FC<PersonDDownProps> = ({
 		<select className={pDDCss.pDDSelect} onChange={onChangeHandler}>
 			<option value="">{option}</option>
 			{data.map(
-				({ id, pName }): JSX.Element => (
-					<option value={pName} key={id}>
+				({ _id, pName }): JSX.Element => (
+					<option value={pName} key={_id}>
 						{pName}
 					</option>
 				)

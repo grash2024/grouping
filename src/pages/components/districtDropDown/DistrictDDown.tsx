@@ -15,8 +15,8 @@ const DistrictDDown: React.FC<DistrictDDownProps> = ({
 		<select className={dDDCss.dDDSelect} onChange={onChangeHandler}>
 			<option value="">{option}</option>
 			{data.map(
-				({ id, dName }): JSX.Element => (
-					<option value={dName} key={id}>
+				({ _id, dName }): JSX.Element => (
+					<option value={dName} key={_id}>
 						{dName}
 					</option>
 				)

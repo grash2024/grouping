@@ -1,5 +1,5 @@
 interface DistrictModel {
-	id: number;
+	_id: number;
 	dName: string;
 }
 export default DistrictModel;

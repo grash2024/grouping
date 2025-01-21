@@ -1,6 +1,7 @@
 .btn {
 	background-color: #04d58d;
 	color: white;
+	font-weight: bolder;
 	width: 100px;
 	padding: 10px;
 	border: none;
