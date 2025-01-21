@@ -12,7 +12,9 @@ const tableSlice = createSlice({
 			localStorage.setItem("data", JSON.stringify(state));
 		},
 		removeGroup: (state, action) => {
-			state = state.filter(({ id }) => action.payload !== id);
+			state = state.filter((ele) => ele.id !== action.payload);
+			localStorage.setItem("data", JSON.stringify(state));
+			return state;
 		},
 	},
 });

@@ -1,5 +1,5 @@
 import React from "react";
-
+import dDDCss from "./DistrictDDown.module.css";
 import DistrictModel from "../../../models/districtModel";
 interface DistrictDDownProps {
 	data: DistrictModel[];
@@ -12,7 +12,7 @@ const DistrictDDown: React.FC<DistrictDDownProps> = ({
 	onChangeHandler,
 }) => {
 	return (
-		<select onChange={onChangeHandler}>
+		<select className={dDDCss.dDDSelect} onChange={onChangeHandler}>
 			<option value="">{option}</option>
 			{data.map(
 				({ id, dName }): JSX.Element => (

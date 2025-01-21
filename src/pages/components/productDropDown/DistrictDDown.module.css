@@ -1,0 +1,10 @@
+.dDDSelect {
+	border: none;
+	border-radius: 5px;
+	outline: none;
+	padding: 10px;
+	margin: 10px;
+}
+.dDDSelect option:checked {
+	background-color: #4caf50;
+}

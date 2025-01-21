@@ -8,10 +8,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { Rootstate } from "../../redux/store";
 import { addGroup } from "../../redux/slices/tableSlice";
 import TableModel from "../../models/tableModel";
-
+import homeCss from "./Home.module.css";
+import Table from "../components/table/Table";
+import Title from "../components/title/Title";
+import { v4 as uuidv4 } from "uuid";
 const Home: React.FC = () => {
-	let id = 0;
-	useEffect(() => {}, []);
 	const [selectedDist, setSelectedDist] = useState("");
 	const [selectedPerson, setSelectedPerson] = useState("");
 	const tableData: TableModel[] = useSelector(
@@ -28,14 +29,16 @@ const Home: React.FC = () => {
 	};
 	const addToGroup = () => {
 		if (selectedPerson && selectedDist) {
+			let id = uuidv4();
 			dispatcher(
-				addGroup({ id: id, district: selectedDist, person: selectedPerson })
+				addGroup({ id, district: selectedDist, person: selectedPerson })
 			);
 		}
 	};
 	return (
 		<div>
-			<section>
+			<Title title="Group Master" />
+			<section className={homeCss.mainContainer}>
 				<DistrictDDown
 					option="District"
 					data={districtData}
@@ -49,13 +52,7 @@ const Home: React.FC = () => {
 				<CButton title="Save" onClickHandler={addToGroup} />
 			</section>
 			<section>
-				{tableData.length > 0 && <h1>District,Person</h1>}
-				{tableData.map(({ district, person }) => (
-					<div style={{ display: "flex" }}>
-						<p>{district}</p>
-						<p>{person}</p>
-					</div>
-				))}
+				<Table tableData={tableData} />
 			</section>
 		</div>
 	);

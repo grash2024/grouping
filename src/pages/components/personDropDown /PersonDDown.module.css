@@ -1,0 +1,15 @@
+.pDDSelect {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	outline: none;
+	padding: 10px;
+	margin: 10px;
+	background-color: #f9f9f9;
+	color: #333;
+	width: 200px;
+}
+
+.pDDSelect option:checked {
+	background-color: #4caf50;
+	color: white;
+}

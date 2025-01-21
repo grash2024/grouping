@@ -2,4 +2,21 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: "Courier New", Courier, monospace;
+}
+body {
+	padding: 20px;
+	background-color: #141b2d;
+}
+select {
+	transition: transform 0.3s ease-in-out 0s;
+}
+button {
+	transition: transform 0.3s ease-in-out 0s;
+}
+select:hover {
+	transform: translateY(-3px);
+}
+button:hover {
+	transform: translateY(-3px);
 }

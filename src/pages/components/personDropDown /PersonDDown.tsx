@@ -1,6 +1,6 @@
 import React from "react";
 import PersonModel from "../../../models/personModel";
-
+import pDDCss from "./PersonDDown.module.css";
 interface PersonDDownProps {
 	data: PersonModel[];
 	option: string;
@@ -12,7 +12,7 @@ const PersonDDown: React.FC<PersonDDownProps> = ({
 	onChangeHandler,
 }) => {
 	return (
-		<select onChange={onChangeHandler}>
+		<select className={pDDCss.pDDSelect} onChange={onChangeHandler}>
 			<option value="">{option}</option>
 			{data.map(
 				({ id, pName }): JSX.Element => (

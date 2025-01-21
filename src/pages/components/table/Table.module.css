@@ -1,0 +1,47 @@
+.mainDiv {
+}
+.tHead {
+	padding: 10px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 500px;
+	color: white;
+	background-color: #1a2038;
+	margin: 10px;
+	cursor: pointer;
+}
+.tRow {
+	padding: 10px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 500px;
+	color: white;
+	background-color: #1f2a40;
+	margin: 10px;
+	cursor: pointer;
+}
+.distContainer {
+	width: 200px;
+	margin-left: 20px;
+}
+.perContainer {
+	width: 200px;
+}
+.btnContainer {
+	width: 200px;
+}
+.btn {
+	background-color: #04d58d;
+	border-radius: 10px;
+	padding: 10px;
+	color: white;
+	border: none;
+	outline: none;
+}
+.btn:active {
+	background-color: #029d67;
+}
